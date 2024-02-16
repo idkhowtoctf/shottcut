@@ -1,0 +1,7 @@
+clear--------------------clearscreen
+wget===========get the file url
+(current dir)
+pwd---------------------print working directory
+ls-------------------------list stuff(files from directory)
+man============provides info about cmd(q)--quit
+cat-----------------------print file/concatenate file
